@@ -30,8 +30,8 @@ public abstract class MotoristaDao {
     public abstract void deleteAll();
 
     @Transaction
-    public void insertAndDeleteAll(List<Motorista> motoristas) {
+    public void insertAndDeleteAll(Motorista motorista) {
         deleteAll();
-        insertAll(motoristas);
+        insertOne(motorista);
     }
 }
