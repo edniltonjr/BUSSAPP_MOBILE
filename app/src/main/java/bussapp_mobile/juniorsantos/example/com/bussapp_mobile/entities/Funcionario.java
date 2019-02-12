@@ -4,16 +4,17 @@ import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "funcionario_table")
+@Entity(tableName = "funcionario_table") // nome da tabela da classe
 public class Funcionario {
 
-	@PrimaryKey(autoGenerate = true)
-	private Integer id_funcionario;
+	@PrimaryKey(autoGenerate = true) // toda classe tem que ter uma foreign key, você pode passar ela, ai ele não gera
+	private Integer id_funcionario;// o resto nao precisa ser mapeado
 	private String nome;
 	private String cpf;
 
 	@Embedded(prefix = "cargo")
-	private ClasseGenerica cargo;
+	private ClasseGenerica cargo; // exceto esse tipo de classe, complexa, a notação embedded diz que tudo o estiver dentro vira coluna da tabela. algo como cargoid, cargonome, na mesma
+	//tabela do funcionario_table
 
 	@Embedded(prefix = "filial")
 	private ClasseGenerica filial;

@@ -12,8 +12,8 @@ import bussapp_mobile.juniorsantos.example.com.bussapp_mobile.entities.Funcionar
 @Dao
 public abstract class FuncionarioDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract public void insertOne(Funcionario funcionario);
+    @Insert(onConflict = OnConflictStrategy.REPLACE) // aqui você passa o metodo, e ele já entende o que fazer
+    abstract public void insertOne(Funcionario funcionario);// a classe tem que estar mapeada, pra ele criar as colunas sozinho
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract public void insertAll(List<Funcionario> funcionarios);
