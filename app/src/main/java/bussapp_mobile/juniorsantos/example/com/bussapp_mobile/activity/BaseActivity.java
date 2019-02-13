@@ -97,7 +97,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
     private void onItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-
+            case R.id.telaFuncionarios:
+                startActivity(new Intent(this, FuncionarioActivity.class));
+                break;
         }
     }
 

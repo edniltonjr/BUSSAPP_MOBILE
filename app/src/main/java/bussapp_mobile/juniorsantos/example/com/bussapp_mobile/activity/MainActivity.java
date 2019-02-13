@@ -18,17 +18,6 @@ public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnR
         setContentView(R.layout.activity_main);
         setUpToolbar();
         setUpMenu();
-
-        DataBase dataBase = DataBase.getINSTANCE(this);
-
-        Funcionario f = new Funcionario();
-        f.setCpf("111");
-        f.setNome("Doni");
-
-        dataBase.funcionarioDao().insertOne(f);
-
-        Funcionario aa = dataBase.funcionarioDao().findOneById(1);
-        aa.getCargo();
     }
 
 

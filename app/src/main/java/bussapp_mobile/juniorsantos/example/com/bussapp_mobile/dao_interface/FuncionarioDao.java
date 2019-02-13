@@ -12,7 +12,8 @@ import bussapp_mobile.juniorsantos.example.com.bussapp_mobile.entities.Funcionar
 @Dao
 public abstract class FuncionarioDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE) // aqui você passa o metodo, e ele já entende o que fazer
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    // aqui você passa o metodo, e ele já entende o que fazer
     abstract public void insertOne(Funcionario funcionario);// a classe tem que estar mapeada, pra ele criar as colunas sozinho
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -21,7 +22,7 @@ public abstract class FuncionarioDao {
     @Query("SELECT * FROM funcionario_table")
     abstract public List<Funcionario> listAll();
 
-    @Query("DELETE FROM funcionario_table")
+    @Query("DELETE FROM funcionario_table WHERE 1=1")
     abstract public void deleteAll();
 
     @Query("SELECT * FROM funcionario_table AS f WHERE f.id_funcionario = :id_funcionario")
