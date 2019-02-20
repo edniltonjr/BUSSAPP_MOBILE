@@ -5,8 +5,6 @@ import android.os.Bundle;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import bussapp_mobile.juniorsantos.example.com.bussapp_mobile.R;
-import bussapp_mobile.juniorsantos.example.com.bussapp_mobile.dao.DataBase;
-import bussapp_mobile.juniorsantos.example.com.bussapp_mobile.entities.Funcionario;
 
 
 public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
