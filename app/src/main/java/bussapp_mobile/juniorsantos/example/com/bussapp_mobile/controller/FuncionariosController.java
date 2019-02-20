@@ -2,7 +2,6 @@ package bussapp_mobile.juniorsantos.example.com.bussapp_mobile.controller;
 
 import android.content.Context;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import bussapp_mobile.juniorsantos.example.com.bussapp_mobile.dao.DataBase;
@@ -28,7 +27,6 @@ public class FuncionariosController extends BaseController {
     }
 
     public void getFuncionariosOffline() {
-        List<Funcionario> funcionariosList = new ArrayList<>();
         FuncionarioDao funcionarioDao = dataBase.funcionarioDao();
         funcionariosControllerInterface.onGetFuncionarios(funcionarioDao.listAll());
     }
@@ -44,9 +42,8 @@ public class FuncionariosController extends BaseController {
                     List<Funcionario> funcionarios = response.body();
 
                     if (funcionarios.size() > 0) {
-                        DataBase dataBase = DataBase.getINSTANCE(context);
                         dataBase.funcionarioDao().insertAndDeleteAll(funcionarios);
-                        alertLong("FuncionariosControllerInterface salvos com sucesso !");
+                        alertLong("Funcionarios salvos com sucesso !");
                     }
                 }
             }
